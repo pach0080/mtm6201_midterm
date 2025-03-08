@@ -50,269 +50,318 @@ table {
 
 
 :root {
-    --transition-duration: 0.3s;
-    --max-width: 1200px;
-  }
-  
-  body {
-    font-family: 'Lato', sans-serif;
-    background-color: #000;
-    color: #fff;
-    line-height: 1.6;
-    margin: 0 auto;
-    max-width: var(--max-width);
-  }
-  
-  .site-header {
-    background-color: #000;
-    padding: 1.5rem 1rem;
-  }
-  
+  --transition-duration: 0.3s;
+  --max-width: 1200px;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+h2, p {
+  font-family: 'Lato', sans-serif !important;
+}
+
+.site-header {
+  background-color: #000;
+  padding: 1.5rem 1rem;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
   .nav-container {
-    display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
   }
+}
 
-  .hero-magazine {
-    font-family: 'Lato', sans-serif;
-    font-size: 12px;
-    font-weight: bold;
+.site-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.title-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-link {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background-color: transparent;
+  transition: transform var(--transition-duration) ease,
+              background-color var(--transition-duration) ease,
+              color var(--transition-duration) ease;
+}
+
+.contact-link {
+  background-color: #0B6BA9;
+  color: #fff;
+  border-radius: 9999px;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.nav-link:hover,
+.planet-link:hover {
+  transform: scale(1.1);
+  background-color: #54DFD9;
+  color: #000;
+  border-radius: 9999px;
+}
+
+.nav-link:focus,
+.planet-link:focus,
+button:focus,
+input:focus {
+  outline: 2px solid #0B6BA9;
+  outline-offset: 2px;
+}
+
+.planet-link,
+.planet-link:visited {
+  transition: transform var(--transition-duration) ease,
+              background-color var(--transition-duration) ease,
+              color var(--transition-duration) ease;
+}
+
+.planet-link {
+  background-color: #0B6BA9;
+  color: #fff;
+  font-weight: bolder;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+}
+
+.planet-link:visited {
+  background-color: #800080;
+  color: #fff;
+}
+
+.hero {
+  position: relative;
+  min-height: 70vh;
+  background: url('../images/milky-way.jpg') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: hero-zoom 30s infinite alternate ease-in-out;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  padding: 1rem;
+}
+
+
+.hero-title {
+  font-size: 3rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.system {
+  position: relative;
+  z-index: 1;
+}
+
+.system::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 0.6em;
+  background-color: #0B6BA9;
+  z-index: -1;
+  transform: translateY(-50%);
+}
+
+
+.solar-system {
+  font-weight: bold;
+  background: linear-gradient(90deg, #006AAB, #47DAD4);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: solar-color-shift 10s infinite alternate ease-in-out;
+}
+
+.locals {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.locals-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.planet {
+  padding: 1rem;
+  transition: transform var(--transition-duration) ease;
+}
+
+.planet:hover {
+  transform: none;
+}
+
+.planet-image {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.planet-name {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 20px;
+}
+
+.site-footer {
+  background: none;
+  border-top: 0.5px solid #303030;
+  text-align: center;
+  padding: 1rem 0;
+  font-family: 'Lato', sans-serif;
+}
+
+
+/*-------------------------------*/
+
+@media (min-width: 901px) {
+  .hero-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-align: left;
+    padding: 1rem;
+  }
+}
+
+/*-------------------------------*/
+
+@media (max-width: 900px) {
+
+  .hero-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-align: left;
+    padding: 1rem;
   }
 
-  .solar-system {
-    font-weight: 1000;
-    background: linear-gradient(90deg, #006AAB, #47DAD4);
-    background-size: 200%;
-    background-clip: text;
-    color: transparent;
-    animation: solar-color-shift 10s infinite alternate ease-in-out;
+  .locals-grid {
+    grid-template-columns: repeat(3, 2fr);
+  }
+  .hero-title {
+    font-size: 2.5rem;
   }
   
-  @media (max-width: 900px) {
-    .nav-container {
-      flex-direction: column;
-      align-items: center;
-    }
+  .hero-subtitle {
+    font-size: 1.75rem;
   }
-  
-  .site-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: normal;
-  }
-  
-  .title-link {
-    text-decoration: none;
-    color: #fff;
-  }
-  
-  .nav-link {
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-    background-color: transparent;
-    transition: transform var(--transition-duration) ease,
-                background-color var(--transition-duration) ease,
-                color var(--transition-duration) ease;
-  }
-  
-  .contact-link {
-    background-color: #0B6BA9;
-    color: #fff;
-    border-radius: 9999px;
-  }
-  
   .nav-list {
-    display: flex;
+    justify-content: center;
+  }
+}
+
+/*-------------------------------*/
+
+@media (max-width: 500px) {
+  .locals-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 70px;
+    text-align: center;
+    padding: 1rem;
+  }
+
+
+  .nav-list {
     flex-direction: row;
     gap: 1rem;
+    margin-top: 0.5rem;
   }
-  
-  .nav-link:hover,
-  .planet-link:hover {
-    transform: scale(1.05);
-    background-color: #54DFD9;
-    color: #000;
-    border-radius: 9999px;
-  }
-  
-  .nav-link:focus,
-  .planet-link:focus,
-  button:focus,
-  input:focus {
-    outline: 2px solid #0B6BA9;
-    outline-offset: 2px;
-  }
-  
-  .planet-link {
-    background-color: #0B6BA9;
-    color: #fff;
-    font-weight: bolder;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-    transition: transform var(--transition-duration) ease,
-                background-color var(--transition-duration) ease,
-                color var(--transition-duration) ease;
-  }
-  
-  .planet-link:visited {
-    background-color: #800080;
-    color: #fff;
-  }
-  
-  .hero {
-    position: relative;
-    min-height: 70vh;
-    background: url('../images/milky-way.jpg') center center / cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    animation: hero-zoom 30s infinite alternate ease-in-out;
-  }
-  
-  .hero-content {
-    position: relative;
-    text-align: center;
-    padding: 1rem;
-  }
-  
   .hero-title {
-    font-size: 3rem;
-    position: relative;
-    margin-bottom: 0.5rem;
-  }
-
-  .hero-subtitle {
     font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .hero-description {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .system {
-    position: relative;
-    z-index: 1;
-  }
-  
-  .system::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 100%;
-    height: 0.6em;
-    background-color: #0B6BA9;
-    z-index: -1;
-    transform: translateY(-50%);
-  }
-  
-  
-  .locals {
-    padding: 2rem 1rem;
-    text-align: center;
   }
 
-  
-  .section-title {
-    font-family: 'Lato', sans-serif;
-    font-weight: bold;
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+  .hero-content {
+    max-width: 350px;
+  } 
+  .hero-subtitle {
+    font-size: 40px;
+    font-weight: normal;
   }
-  
-  .locals-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 2rem;
-    padding: 0 1rem;
+  .solar-system {
+    font-weight: 900;
   }
-  
-  .planet {
-    padding: 1rem;
-    transition: transform var(--transition-duration) ease;
-  }
-  
-  .planet-image {
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-  }
-  
-  .planet-name {
-    font-family: 'Lato', sans-serif;
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    padding-bottom: 20px;
-  }
-  
-  .site-footer {
-    background-color: #111;
-    text-align: center;
-    padding: 1rem;
-    font-family: 'Lato', sans-serif;
-  }
-  
-  @media (max-width: 900px) {
-    .locals-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .hero-title {
-      font-size: 2.5rem;
-    }
-    .hero-subtitle {
-      font-size: 1.75rem;
-    }
-    .nav-list {
-      justify-content: center;
-    }
-  }
-  
-  @media (max-width: 500px) {
-    .locals-grid {
-      grid-template-columns: 1fr;
-    }
-    .nav-list {
-      flex-direction: row;
-      gap: 1rem;
-      margin-top: 0.5rem;
-    }
-    .hero-title {
-      font-size: 2rem;
-    }
-    .hero-subtitle {
-      font-size: 30px;
-    }
-  }
-  
+}
 
-  /*---------- My animations ------------------*/
+/*@keyframes hero-zoom {
+  0% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 110%;
+  }
+}*/
 
-  @keyframes hero-zoom {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.05);
-    }
+@keyframes solar-color-shift {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  @keyframes solar-color-shift {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: 100% 50%;
-    }
+  100% {
+    background-position: 100% 50%;
   }
- 
+}
