@@ -46,7 +46,7 @@ table {
   border-spacing: 0;
 }
 
-/*-- Start -- */
+/*---------------------- Start ----------------------------- */
 
 
 :root {
@@ -54,20 +54,18 @@ table {
     --max-width: 1200px;
   }
   
-
   body {
     font-family: 'Lato', sans-serif;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #000;
+    color: #fff;
     line-height: 1.6;
     margin: 0 auto;
     max-width: var(--max-width);
   }
   
-
   .site-header {
-    background-color: #000000;
-    padding: 1rem;
+    background-color: #000;
+    padding: 1.5rem 1rem;
   }
   
   .nav-container {
@@ -75,8 +73,22 @@ table {
     justify-content: space-between;
     align-items: center;
   }
-  
 
+  .hero-magazine {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .solar-system {
+    font-weight: 1000;
+    background: linear-gradient(90deg, #006AAB, #47DAD4);
+    background-size: 200%;
+    background-clip: text;
+    color: transparent;
+    animation: solar-color-shift 10s infinite alternate ease-in-out;
+  }
+  
   @media (max-width: 900px) {
     .nav-container {
       flex-direction: column;
@@ -87,19 +99,18 @@ table {
   .site-title {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: normal;
   }
   
   .title-link {
     text-decoration: none;
-    color: #ffffff;
+    color: #fff;
   }
   
-
   .nav-link {
     font-family: 'Lato', sans-serif;
     font-weight: 700;
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 9999px;
@@ -111,19 +122,24 @@ table {
   
   .contact-link {
     background-color: #0B6BA9;
-    color: #ffffff;
+    color: #fff;
     border-radius: 9999px;
+  }
+  
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
   }
   
   .nav-link:hover,
   .planet-link:hover {
     transform: scale(1.05);
     background-color: #54DFD9;
-    color: #000000;
+    color: #000;
     border-radius: 9999px;
   }
   
-
   .nav-link:focus,
   .planet-link:focus,
   button:focus,
@@ -132,10 +148,10 @@ table {
     outline-offset: 2px;
   }
   
-
   .planet-link {
     background-color: #0B6BA9;
-    color: #ffffff;
+    color: #fff;
+    font-weight: bolder;
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 9999px;
@@ -144,13 +160,11 @@ table {
                 color var(--transition-duration) ease;
   }
   
-
   .planet-link:visited {
     background-color: #800080;
-    color: #ffffff;
+    color: #fff;
   }
   
-
   .hero {
     position: relative;
     min-height: 70vh;
@@ -169,16 +183,26 @@ table {
   }
   
   .hero-title {
-    font-family: 'Playfair Display', serif;
     font-size: 3rem;
     position: relative;
     margin-bottom: 0.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-description {
+    max-width: 600px;
+    margin: 0 auto;
   }
   
   .system {
     position: relative;
     z-index: 1;
   }
+  
   .system::after {
     content: "";
     position: absolute;
@@ -191,63 +215,30 @@ table {
     transform: translateY(-50%);
   }
   
-  .hero-subtitle {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
   
-  .hero-description {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-
-  @keyframes hero-zoom {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.05);
-    }
-  }
-  
-  @keyframes color-shift {
-    0% {
-      color: #0B6BA9;
-    }
-    100% {
-      color: #ff7e57;
-    }
-  }
-  
-
   .locals {
     padding: 2rem 1rem;
     text-align: center;
   }
+
   
   .section-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
   }
   
   .locals-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 2rem;
     padding: 0 1rem;
   }
   
-
   .planet {
     padding: 1rem;
     transition: transform var(--transition-duration) ease;
-  }
-  
-  .planet:hover {
-    transform: translateY(-5px);
   }
   
   .planet-image {
@@ -258,12 +249,13 @@ table {
   }
   
   .planet-name {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    padding-bottom: 20px;
   }
   
-
   .site-footer {
     background-color: #111;
     text-align: center;
@@ -271,7 +263,6 @@ table {
     font-family: 'Lato', sans-serif;
   }
   
-
   @media (max-width: 900px) {
     .locals-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -300,6 +291,28 @@ table {
       font-size: 2rem;
     }
     .hero-subtitle {
-      font-size: 1.5rem;
+      font-size: 30px;
     }
   }
+  
+
+  /*---------- My animations ------------------*/
+
+  @keyframes hero-zoom {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);
+    }
+  }
+  
+  @keyframes solar-color-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+ 
