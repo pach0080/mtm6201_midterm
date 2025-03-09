@@ -95,6 +95,7 @@ h2, p {
 }
 
 .nav-link {
+  display: inline-block;
   font-family: 'Lato', sans-serif;
   font-weight: 700;
   color: #fff;
@@ -116,12 +117,13 @@ h2, p {
 .nav-list {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 3rem;
+  padding-top: 1rem;
 }
 
 .nav-link:hover,
 .planet-link:hover {
-  transform: scale(10.10);
+  transform: scale(1.40);
   background-color: #54DFD9;
   color: #000;
   border-radius: 400px;
@@ -135,25 +137,25 @@ input:focus {
   outline-offset: 2px;
 }
 
-.planet-link,
-.planet-link:visited {
-  transition: transform var(--transition-duration) ease,
-              background-color var(--transition-duration) ease,
-              color var(--transition-duration) ease;
-}
-
 .planet-link {
+  display: inline-block;
   background-color: #0B6BA9;
   color: #fff;
   font-weight: bolder;
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 400px;
+  transition: transform var(--transition-duration) ease,
+              background-color var(--transition-duration) ease,
+              color var(--transition-duration) ease;
 }
 
 .planet-link:visited {
   background-color: #800080;
   color: #fff;
+  transition: transform var(--transition-duration) ease,
+              background-color var(--transition-duration) ease,
+              color var(--transition-duration) ease;
 }
 
 .planet-link:visited:hover {
@@ -368,6 +370,7 @@ input:focus {
     bottom: 70px;
     text-align: center;
     padding: 1rem;
+    max-width: 380px;
   }
 
 
@@ -380,9 +383,6 @@ input:focus {
     font-size: 2rem;
   }
 
-  .hero-content {
-    max-width: 350px;
-  } 
   .hero-subtitle {
     font-size: 40px;
     font-weight: normal;
