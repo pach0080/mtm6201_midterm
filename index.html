@@ -7,15 +7,16 @@
   <link rel="icon" href="images/icon.png" type="image/png" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
+
+  <header class="site-header" role="banner">
     <div class="nav-container">
       <div class="site-title">
-        <a href="#" class="title-link">THE&nbsp<span class="system"> SYSTEM </span></a>
+        <a href="#" class="title-link">THE&nbsp;<span class="system">SYSTEM</span></a>
       </div>
-      <nav class="site-nav">
+      <nav class="site-nav" role="navigation">
         <ul class="nav-list">
           <li><a href="#" class="nav-link">Planets</a></li>
           <li><a href="#" class="nav-link">Interstellar</a></li>
@@ -24,55 +25,58 @@
       </nav>
     </div>
   </header>
-  <main>
 
+<main role="main">
+  
     <div class="wrapper">
-      <section class="hero">
+      <section class="hero" aria-label="Hero Section">
         <div class="hero-content">
-          <p class="hero-magazine">THE&nbsp&nbsp&nbspSYSTEM&nbsp&nbsp&nbspMAGAZINE</p>
-          <h2 class="hero-subtitle">Welcome to the <span class="solar-system">Solar System</span></h2>
+          <p class="hero-magazine">THE&nbsp;&nbsp;&nbsp;SYSTEM&nbsp;&nbsp;&nbsp;MAGAZINE</p>
+            <h2 class="hero-subtitle">Welcome to the <span class="solar-system">Solar System</span></h2>
           <p class="hero-description">Take a tour around the coolest stellar system around.</p>
         </div>
       </section>
     </div>
     
-    <section class="locals">
-      <h2 class="section-title">Meet the Locals</h2>
-      <div class="locals-grid">
-        <article class="planet">
-          <img src="images/sun.jpg" alt="The Sun" class="planet-image" />
-          <h3 class="planet-name">The Sun</h3>
-          <a href="https://en.wikipedia.org/wiki/Sun" target="_blank" rel="noopener noreferrer" class="planet-link">Learn More</a>
-        </article>
-        <article class="planet">
+  <section class="locals" aria-labelledby="locals-title">
+  <h2 class="section-title" id="locals-title">Meet the Locals</h2>
+    <div class="locals-grid">
+      <article class="planet">
+            <img src="images/sun.jpg" alt="The Sun" class="planet-image" />
+              <h3 class="planet-name">The Sun</h3>
+                <a href="https://en.wikipedia.org/wiki/Sun" target="_blank" rel="noopener noreferrer" class="planet-link">Learn More</a>
+      </article>
+      <article class="planet">
           <img src="images/mercury.jpg" alt="Mercury" class="planet-image" />
           <h3 class="planet-name">Mercury</h3>
           <a href="https://en.wikipedia.org/wiki/Mercury_(planet)" target="_blank" rel="noopener noreferrer" class="planet-link">Learn More</a>
-        </article>
-        <article class="planet">
+      </article>
+      <article class="planet">
           <img src="images/venus.jpg" alt="Venus" class="planet-image" />
           <h3 class="planet-name">Venus</h3>
           <a href="https://en.wikipedia.org/wiki/Venus" target="_blank" rel="noopener noreferrer" class="planet-link">Learn More</a>
-        </article>
-        <article class="planet">
+      </article>
+      <article class="planet">
           <img src="images/earth.jpg" alt="Earth" class="planet-image" />
           <h3 class="planet-name">Earth</h3>
           <a href="https://en.wikipedia.org/wiki/Earth" target="_blank" rel="noopener noreferrer" class="planet-link">Learn More</a>
-        </article>
-        <article class="planet">
+      </article>
+      <article class="planet">
           <img src="images/moon.jpg" alt="The Moon" class="planet-image" />
           <h3 class="planet-name">The Moon</h3>
           <a href="https://en.wikipedia.org/wiki/Moon" target="_blank" rel="noopener noreferrer" class="planet-link">Learn More</a>
-        </article>
-        <article class="planet">
+      </article>
+      <article class="planet">
           <img src="images/mars.jpg" alt="Mars" class="planet-image" />
           <h3 class="planet-name">Mars</h3>
           <a href="https://en.wikipedia.org/wiki/Mars" target="_blank" rel="noopener noreferrer" class="planet-link">Learn More</a>
-        </article>
-      </div>
-    </section>
-  </main>
-  <footer class="site-footer">
+      </article>
+    </div>
+  </section>
+
+</main>
+
+  <footer class="site-footer" role="contentinfo">
     <p>&copy; 2024 - The System</p>
   </footer>
 </body>

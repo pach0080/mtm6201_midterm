@@ -46,18 +46,11 @@ table {
   border-spacing: 0;
 }
 
-/*---------------------- Start ----------------------------- */
-
-
-/*---------------------- Amazing for setting up basic properties without using wrapper or repeating the animation over and over in text,
-sadly in the end I still had to use .wrapper on the section-hero because of the background image ----------------------------- */
-
+/*---------------------- Global Settings / Personal Variables ----------------------------- */
 :root {
   --transition-duration: 0.3s;
   --max-width: 1200px;
 }
-
-/*---------------------- Content ----------------------------- */
 
 body {
   font-family: 'Lato', sans-serif;
@@ -72,10 +65,13 @@ h2, p {
   font-family: 'Lato', sans-serif;
 }
 
+/*---------------------- Header ----------------------------- */
 .site-header {
   padding: 1.5rem 1rem; /*Trying something responsive, a trend that i couldn't apply later because it requires so much testing to nail down right */
   /* no background color - covers the overflow from the hero image */
 }
+
+/*---------------------- Navigation ----------------------------- */
 
 .nav-container {
   display: flex;
@@ -92,6 +88,13 @@ h2, p {
 .title-link {
   text-decoration: none;
   color: #fff;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  padding-top: 1rem;
 }
 
 .nav-link {
@@ -114,54 +117,20 @@ h2, p {
   border-radius: 400px;
 }
 
-.nav-list {
-  display: flex;
-  flex-direction: row;
-  gap: 3rem;
-  padding-top: 1rem;
-}
-
-.nav-link:hover,
-.planet-link:hover {
+.nav-link:hover {
   transform: scale(1.40);
   background-color: #54DFD9;
   color: #000;
   border-radius: 400px;
 }
 
-.nav-link:focus,
-.planet-link:focus,
-button:focus,
-input:focus {
+.nav-link:focus {
   outline: 2px solid #0B6BA9;
   outline-offset: 2px;
 }
 
-.planet-link {
-  display: inline-block;
-  background-color: #0B6BA9;
-  color: #fff;
-  font-weight: bolder;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 400px;
-  transition: transform var(--transition-duration) ease,
-              background-color var(--transition-duration) ease,
-              color var(--transition-duration) ease;
-}
 
-.planet-link:visited {
-  background-color: #800080;
-  color: #fff;
-  transition: transform var(--transition-duration) ease,
-              background-color var(--transition-duration) ease,
-              color var(--transition-duration) ease;
-}
-
-.planet-link:visited:hover {
-  background-color: #54DFD9;
-  color: #000;
-}
+/*---------------------- Hero Section ----------------------------- */
 
 .hero {
   position: relative;
@@ -216,6 +185,8 @@ input:focus {
   margin: 0 0;
 }
 
+/*---------------------- This is the Title and Solar System Animation ----------------------------- */
+
 .system {
   position: relative;
   z-index: 1;
@@ -233,7 +204,6 @@ input:focus {
   transform: translateY(-50%);
 }
 
-
 .solar-system {
   font-weight: bold;
   background: linear-gradient(90deg, #006AAB, #47DAD4);
@@ -244,6 +214,8 @@ input:focus {
   color: transparent;
   animation: solar-color-shift 10s infinite alternate ease-in-out;
 }
+
+/*---------------------- Locals and Planets Section ----------------------------- */
 
 .locals {
   padding: 2rem 1rem;
@@ -288,20 +260,55 @@ input:focus {
   padding-bottom: 20px;
 }
 
-.site-footer {
-  background: none;
-  border-top: 0.5px solid #303030;
-  text-align: center;
-  padding: 1rem 0;
-  font-family: 'Lato', sans-serif;
+/*---------------------- Planet Link (Used in Locals) ----------------------------- */
+
+.planet-link {
+  display: inline-block;
+  background-color: #0B6BA9;
+  color: #fff;
+  font-weight: bolder;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 400px;
+  transition: transform var(--transition-duration) ease,
+              background-color var(--transition-duration) ease,
+              color var(--transition-duration) ease;
 }
+
+.planet-link:hover {
+  transform: scale(1.40);
+  background-color: #54DFD9;
+  color: #000;
+  border-radius: 400px;
+}
+
+.planet-link:visited {
+  background-color: #800080;
+  color: #fff;
+  transition: transform var(--transition-duration) ease,
+              background-color var(--transition-duration) ease,
+              color var(--transition-duration) ease;
+}
+
+.planet-link:visited:hover {
+  background-color: #54DFD9;
+  color: #000;
+}
+
+.planet-link:focus,
+button:focus,
+input:focus {
+  outline: 2px solid #0B6BA9;
+  outline-offset: 2px;
+}
+
+/*---------------------- Helper Class ----------------------------- */
 
 .wrapper {
   min-width: 1200px;
 }
 
-
-/*-------------------------------*/
+/*---------------------- Media Queries ----------------------------- */
 
 @media (min-width: 901px) {
   
@@ -319,10 +326,7 @@ input:focus {
   .section-title {
     text-align: left;
   }
-
 }
-
-/*-------------------------------*/
 
 @media (max-width: 900px) {
 
@@ -358,8 +362,6 @@ input:focus {
   }
 }
 
-/*-------------------------------*/
-
 @media (max-width: 500px) {
   .locals-grid {
     grid-template-columns: 1fr;
@@ -372,7 +374,6 @@ input:focus {
     padding: 1rem;
     max-width: 380px;
   }
-
 
   .nav-list {
     flex-direction: row;
@@ -396,9 +397,9 @@ input:focus {
   }
 }
 
-/*------- Had to use background-size because i didnt want to redo my whole structure for this backgorund movement hahaha --------- */
+/*---------------------- Animations ----------------------------- */
 
-  @keyframes hero-zoom  {
+@keyframes hero-zoom  {
   0% {
     background-size: 150%;
   }
@@ -415,6 +416,18 @@ input:focus {
     background-position: 100% 50%;
   }
 }
+
+/*---------------------- Footer ----------------------------- */
+
+.site-footer {
+  background: none;
+  border-top: 0.5px solid #303030;
+  text-align: center;
+  padding: 1rem 0;
+  font-family: 'Lato', sans-serif;
+}
+
+
 
 /*@keyframes hero-zoom {
   from {
