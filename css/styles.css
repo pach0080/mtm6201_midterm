@@ -64,7 +64,7 @@ body {
 }
 
 h2, p {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Lato', sans-serif;
 }
 
 .site-header {
@@ -76,13 +76,6 @@ h2, p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-@media (max-width: 900px) {
-  .nav-container {
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
 .site-title {
@@ -102,7 +95,7 @@ h2, p {
   color: #fff;
   text-decoration: none;
   padding: 0.5rem 1rem;
-  border-radius: 9999px;
+  border-radius: 400px;
   background-color: transparent;
   transition: transform var(--transition-duration) ease,
               background-color var(--transition-duration) ease,
@@ -112,7 +105,7 @@ h2, p {
 .contact-link {
   background-color: #0B6BA9;
   color: #fff;
-  border-radius: 9999px;
+  border-radius: 400px;
 }
 
 .nav-list {
@@ -123,10 +116,10 @@ h2, p {
 
 .nav-link:hover,
 .planet-link:hover {
-  transform: scale(1.1);
+  transform: scale(10.10);
   background-color: #54DFD9;
   color: #000;
-  border-radius: 9999px;
+  border-radius: 400px;
 }
 
 .nav-link:focus,
@@ -150,12 +143,17 @@ input:focus {
   font-weight: bolder;
   text-decoration: none;
   padding: 0.5rem 1rem;
-  border-radius: 9999px;
+  border-radius: 400px;
 }
 
 .planet-link:visited {
   background-color: #800080;
   color: #fff;
+}
+
+.planet-link:visited:hover {
+  background-color: #54DFD9;
+  color: #000;
 }
 
 .hero {
@@ -166,7 +164,7 @@ input:focus {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  animation: hero-zoom 30s infinite alternate ease-in-out;
+  animation: hero-zoom 10s infinite alternate ease-in-out;
 }
 
 .hero-content {
@@ -175,6 +173,10 @@ input:focus {
   padding: 1rem;
 }
 
+.hero-magazine {
+  font-size: 14px;
+  font-weight: bold;
+}
 
 .hero-title {
   font-size: 3rem;
@@ -189,7 +191,7 @@ input:focus {
 
 .hero-description {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 0;
 }
 
 .system {
@@ -276,6 +278,7 @@ input:focus {
 /*-------------------------------*/
 
 @media (min-width: 901px) {
+  
   .hero-content {
     position: absolute;
     bottom: 20px;
@@ -283,11 +286,23 @@ input:focus {
     text-align: left;
     padding: 1rem;
   }
+
+  .hero-subtitle {
+    font-size: 48PX;
+  }
+  .section-title {
+    text-align: left;
+  }
 }
 
 /*-------------------------------*/
 
 @media (max-width: 900px) {
+
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
   .hero-content {
     position: absolute;
@@ -305,7 +320,7 @@ input:focus {
   }
   
   .hero-subtitle {
-    font-size: 1.75rem;
+    font-size: 40px;
   }
   .nav-list {
     justify-content: center;
@@ -348,14 +363,16 @@ input:focus {
   }
 }
 
-/*@keyframes hero-zoom {
+/*------- Had to use background-size because i didnt want to redo my whole structure for this backgorund movement hahaha --------- */
+
+  @keyframes hero-zoom  {
   0% {
     background-size: 100%;
   }
   100% {
-    background-size: 110%;
+    background-size: 150%;
   }
-}*/
+}
 
 @keyframes solar-color-shift {
   0% {
@@ -365,3 +382,11 @@ input:focus {
     background-position: 100% 50%;
   }
 }
+
+/*@keyframes hero-zoom {
+  from {
+      transform: scale(1);
+  }
+  to {
+      transform: scale(1.5); /* Makes the image larger; will be cropped by overflow: hidden on .wrapper
+  }  */
