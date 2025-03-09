@@ -49,10 +49,15 @@ table {
 /*---------------------- Start ----------------------------- */
 
 
+/*---------------------- Amazing for setting up basic properties without using wrapper or repeating the animation over and over in text,
+sadly in the end I still had to use .wrapper on the section-hero because of the background image ----------------------------- */
+
 :root {
   --transition-duration: 0.3s;
   --max-width: 1200px;
 }
+
+/*---------------------- Content ----------------------------- */
 
 body {
   font-family: 'Lato', sans-serif;
@@ -60,7 +65,7 @@ body {
   color: #fff;
   line-height: 1.6;
   margin: 0 auto;
-  max-width: var(--max-width);
+  max-width: var(--max-width); /* This is our pseudo wrapper, be aware */
 }
 
 h2, p {
@@ -68,8 +73,8 @@ h2, p {
 }
 
 .site-header {
-  background-color: #000;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 1rem; /*Trying something responsive, a trend that i couldn't apply later because it requires so much testing to nail down right */
+  /* no background color - covers the overflow from the hero image */
 }
 
 .nav-container {
@@ -163,8 +168,23 @@ input:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
   animation: hero-zoom 10s infinite alternate ease-in-out;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110%;
+  height: 110%;
+  transform: translate(-50%, -50%);
+  background: inherit;
+  filter: blur(80px); 
+  z-index: -1;
+  opacity: 0.8;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -274,6 +294,10 @@ input:focus {
   font-family: 'Lato', sans-serif;
 }
 
+.wrapper {
+  min-width: 1200px;
+}
+
 
 /*-------------------------------*/
 
@@ -293,6 +317,7 @@ input:focus {
   .section-title {
     text-align: left;
   }
+
 }
 
 /*-------------------------------*/
@@ -324,6 +349,10 @@ input:focus {
   }
   .nav-list {
     justify-content: center;
+  }
+
+  .wrapper {
+    min-width: 900px;
   }
 }
 
@@ -361,16 +390,20 @@ input:focus {
   .solar-system {
     font-weight: 900;
   }
+
+  .wrapper {
+    min-width: 900px;
+  }
 }
 
 /*------- Had to use background-size because i didnt want to redo my whole structure for this backgorund movement hahaha --------- */
 
   @keyframes hero-zoom  {
   0% {
-    background-size: 100%;
+    background-size: 150%;
   }
   100% {
-    background-size: 150%;
+    background-size: 200%;
   }
 }
 
