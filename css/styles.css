@@ -47,6 +47,9 @@ table {
 }
 
 /*---------------------- Global Settings / Personal Variables ----------------------------- */
+
+
+
 :root {
   --transition-duration: 0.3s;
   --max-width: 1200px;
@@ -67,8 +70,8 @@ h2, p {
 
 /*---------------------- Header ----------------------------- */
 .site-header {
-  padding: 1.5rem 1rem; /*Trying something responsive, a trend that i couldn't apply later because it requires so much testing to nail down right */
-  /* no background color - covers the overflow from the hero image */
+  padding: 1.5rem 1rem; /*Trying something responsive, a trend that i wouldn't apply later because it requires so much testing to nail down right */
+  /* no background color for the header - covers the overflow from the hero image */
 }
 
 /*---------------------- Navigation ----------------------------- */
@@ -134,7 +137,7 @@ h2, p {
 
 .hero {
   position: relative;
-  min-height: 70vh;
+  min-height: 70vh; /* helps with responsiveness, just so the content doesn't overflow*/
   background: url('../images/milky-way.jpg') center center / cover no-repeat;
   display: flex;
   align-items: center;
@@ -143,7 +146,9 @@ h2, p {
   animation: hero-zoom 10s infinite alternate ease-in-out;
 }
 
-.hero::after {
+
+
+.hero::after { /* This is the glow effect i created */
   content: "";
   position: absolute;
   top: 50%;
@@ -164,7 +169,7 @@ h2, p {
   padding: 1rem;
 }
 
-.hero-magazine {
+.hero-magazine { /* Only applies to THE SYSTEM MAGAZINE */
   font-size: 14px;
   font-weight: bold;
 }
@@ -304,6 +309,7 @@ input:focus {
 
 /*---------------------- Helper Class ----------------------------- */
 
+
 .wrapper {
   min-width: 1200px;
 }
@@ -312,6 +318,8 @@ input:focus {
 
 @media (min-width: 901px) {
   
+
+  /* The content has to move and I positioned it bottom left */
   .hero-content {
     position: absolute;
     bottom: 20px;
@@ -343,6 +351,8 @@ input:focus {
     padding: 1rem;
   }
 
+
+  /* Changing the layout */
   .locals-grid {
     grid-template-columns: repeat(3, 2fr);
   }
